@@ -11,13 +11,17 @@ function Conversation() {
   return (
     <Stack height={"100%"} maxHeight={"100vh"} width={"auto"}>
       {/* Chat Header */}
-      <Header/>
+      <Header />
       {/* Msg */}
-      <Box width={"100%"} sx={{ flexGrow: 1, heigh: "100%", overflowY: "scroll" }}>
-        <Message/>
+      <Box
+        width={"100%"}
+        className="scrollbarChat"
+        sx={{ flexGrow: 1, heigh: "100%", overflowY: "scroll" }}
+      >
+        <Message menu={true}/>
       </Box>
       {/* Chat Footer */}
-      <Footer/>
+      <Footer />
     </Stack>
   );
 }

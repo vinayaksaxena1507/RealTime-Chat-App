@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Logo from "../../assets/Images/logo.ico";
 
-import { Avatar, Box, Divider, IconButton, Stack } from "@mui/material";
+import { Box, Divider, IconButton, Stack } from "@mui/material";
 import { Nav_Buttons } from "../../data";
 import { Gear } from "phosphor-react";
-import { faker } from "@faker-js/faker";
 import useSettings from "../../hooks/useSettings";
 import AntSwitch from "../../components/AntSwitch";
+import ProfileMenu from "./ProfilMenu";
 
 const SideBar = () => {
   const theme = useTheme();
@@ -118,12 +118,13 @@ const SideBar = () => {
         <Stack spacing={4}>
           {/* Switch */}
           <AntSwitch
+            defaultChecked={theme.palette.mode === "dark"}
             onChange={() => {
               onToggleMode();
             }}
-            defaultChecked
           />
-          <Avatar src={faker.image.avatar()} />
+          {/* <Avatar src={faker.image.avatar()} /> */}
+          <ProfileMenu/>
         </Stack>
       </Stack>
     </Box>
