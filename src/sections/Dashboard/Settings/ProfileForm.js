@@ -5,8 +5,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormProvider from "../../../components/hook-form/FormProvider";
 import { RHFTextField, RHFUploadAvatar } from "../../../components/hook-form";
-import { Stack } from "@mui/material";
-import { LoadingButton } from "@mui/lab";
+import { Button, Stack } from "@mui/material";
+// import { LoadingButton } from "@mui/lab";
 import { useDispatch, useSelector } from "react-redux";
 import { UpdateUserProfile } from "../../../redux/slices/app";
 import { AWS_S3_REGION, S3_BUCKET_NAME } from "../../../config";
@@ -90,7 +90,7 @@ const ProfileForm = () => {
         <RHFTextField multiline rows={4} name="about" label="About" />
 
         <Stack direction={"row"} justifyContent="end">
-          <LoadingButton
+          <Button
             color="primary"
             size="large"
             type="submit"
@@ -98,7 +98,7 @@ const ProfileForm = () => {
             // loading={isSubmitSuccessful || isSubmitting}
           >
             Save
-          </LoadingButton>
+          </Button>
         </Stack>
       </Stack>
     </FormProvider>
